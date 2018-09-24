@@ -5,7 +5,7 @@ class Main extends Component {
     render(){
         return (
             <div>
-                <p>
+                <p className="text-danger">
                 To see your wishlist and buddy matches <a href="/secret">Click Here</a>
                 </p>
             
