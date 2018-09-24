@@ -5,7 +5,7 @@ class Secret extends Component {
         return (
             <div>
                 Secret Area<br/>
-                <a href="/">Go Home</a>
+                <a href="/">Home</a>
                 <br/>
                 <button onClick={this.props.auth.logout}>Logout</button>
             </div>

@@ -4,7 +4,9 @@ class NotFound extends Component {
     render(){
         return(
             <div>
-                Uh Oh, Page Not Found!
+                Please Login to See Profile
+                <hr/>
+                <a href="/">Go Back</a>
             </div>
         )
     }

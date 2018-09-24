@@ -25,9 +25,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Securing Your React App With Auth0</h1>
-        </header>
         {mainComponent}
       </div>
       
