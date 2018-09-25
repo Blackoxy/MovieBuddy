@@ -28,6 +28,8 @@ class App extends Component {
   componentDidMount = () => this.loadData()
 
   render() {
+      var getUser = localStorage.getItem('User_id')
+      console.log(getUser)
       let mainComponent = "";
       switch(this.props.location){
         case "":
