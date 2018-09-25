@@ -4,6 +4,6 @@ body {
   font-family: sans-serif;
   background-image: url(./assets/movie-buddy-bg.png);
   background-position: center;
-  background-size:cover;
+  background-size: cover;
   background-attachment: fixed;
 }

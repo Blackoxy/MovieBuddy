@@ -11,6 +11,8 @@ class Callback extends Component {
         return(
             <div>
                 Loading...
+                <br/>
+                <a href="/secret">Home</a>
             </div>
         )
     }
