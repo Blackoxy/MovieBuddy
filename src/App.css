@@ -4,9 +4,9 @@
 }
 
 .buddyLogo { 
-    width: auto;
+    width: 100%;
     max-width: 600px;
-    max-height: 200px;
+    height: auto;
 }
 
 .resp {
