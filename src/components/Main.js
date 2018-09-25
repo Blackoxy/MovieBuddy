@@ -18,9 +18,9 @@ const Main = (props) => {
             {/* <p className="text-danger">
             To see your wishlist and buddy matches <a href="/secret">Click Here</a>
             </p> */}
-        
+
             {!props.auth.isAuthenticated() && <button className="btn btn-info" onClick={props.auth.login}>Login</button>}
-            
+
             <div className="card listing">
                 {movies}
             </div>
