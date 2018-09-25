@@ -47,14 +47,22 @@ class App extends Component {
         return (
             <div className="App">
                 <section className="container-fluid">
-                    <div className="row">
-                        <div className="main-content col-sm-8 mx-auto">
-                            {mainComponent}
+                    <div className="main-content">
+                        <div className="row">
+                            <div className="col-sm-8 mx-auto">
+                                {mainComponent}
+                            </div>
+                        </div>
+                        <div className="row m-0">
+                            <nav>
+                                <a>About</a>
+                                <a>Movie Buddies</a>
+                                <a>Movies</a>
+                                <a>Profile</a>
+                                <a>Contact Us</a>
+                            </nav>
                         </div>
                     </div>
-                    <footer>
-                        Test
-                    </footer>
                 </section>
             </div>
 

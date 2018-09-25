@@ -15,16 +15,16 @@ const Main = (props) => {
     return (
         <div>
             <img className="buddyLogo" src={logo} alt="movie buddy logo"/>
-            {/* <p className="text-danger">
+            <p className="text-danger">
             To see your wishlist and buddy matches <a href="/secret">Click Here</a>
-            </p> */}
+            </p>
 
             {!props.auth.isAuthenticated() && <button className="btn btn-info" onClick={props.auth.login}>Login</button>}
 
-            <div className="card listing">
+            <ul className="listings listing">
                 {movies}
-            </div>
-            <p>Login to start adding movies and matching with Movie Buddies</p>
+            </ul>
+            {/*<p>Login to start adding movies and matching with Movie Buddies</p>*/}
         </div>
     )
 }
