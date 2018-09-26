@@ -27,15 +27,11 @@ render(){
                         <div>
                             <img className="buddyLogo" src={logo} alt="movie buddy logo"/>
                             <p className="text-danger">
-                                To see your wishlist and buddy matches <a href="/secret">Click Here</a>
+                                <a href="/secret">Click here to login</a>
                             </p>
 
                             {!this.props.auth.isAuthenticated() && <button className="btn btn-info" onClick={this.props.auth.login}>Login</button>}
 
-                            <ul className="listings listing">
-                                {movies(this.props.data)}
-                            </ul>
-                            {/*<p>Login to start adding movies and matching with Movie Buddies</p>*/}
                         </div>
                     </div>
                 </div>
@@ -45,9 +41,6 @@ render(){
                             {this.state.visible ? <nav>
                                 <ul>
                                     <li><a>About</a></li>
-                                    <li><a>Movie Buddies</a></li>
-                                    <li><a>Movies</a></li>
-                                    <li><a>Profile</a></li>
                                     <li><a>Contact Us</a></li>
                                 </ul>
                             </nav> : null}
@@ -63,13 +56,5 @@ render(){
 
     }
 }
-const movies = (data) => data.map(movie => {
-        console.log('test')
-        return <Movie    poster_path={movie.poster_path}
-            title={movie.title}
-            overview={movie.overview}
-            popularity={movie.popularity}
-        />
-        })
 
 export default Main;
