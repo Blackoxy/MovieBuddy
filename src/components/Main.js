@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from "../assets/movie-buddy-logo.png"
 import Movie from "./Movie"
+import { Router, Route, Switch } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import UserForm from "./UserForm"
@@ -27,9 +28,12 @@ class Main extends React.Component {
         }
         for (let j in arr) {
             if (unique === arr[j]) {
-                return <MovieList data={this.props.data} />
-
-                }
+                return (
+                    <Switch>
+                        <Route path='/secret' render={(props)=> <MovieList { ...props } data={this.props.data}/> } />
+                    </Switch>
+                    )
+            }
 
         }
         for (let k in arr) {
@@ -81,13 +85,5 @@ class Main extends React.Component {
 
 }
 }
-const movieList = (data) => data.map(movie => {
-    console.log('test')
-    return <Movie    poster_path={movie.poster_path}
-        title={movie.title}
-        overview={movie.overview}
-        popularity={movie.popularity}
-    />
-    })
 
 export default Main;
