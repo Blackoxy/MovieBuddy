@@ -62,23 +62,30 @@ class App extends Component {
                                 {mainComponent}
                             </div>
                         </div>
-                        <div className="row m-0">
-                            <nav>
-                                <a>About</a>
-                                <a>Movie Buddies</a>
-                                <a>Movies</a>
-                                <a>Profile</a>
-                                <a>Contact Us</a>
-                                {this.state.visible ? <FontAwesomeIcon onClick={this.toggle} className="fa-2x" icon={faTimes} /> : <FontAwesomeIcon onClick={this.toggle} className="fa-2x" icon={faBars} />
-                                }
-                            </nav>
+                        <div className="row d-flex justify-content-space-between m-0">
+                            <div className="main-nav">
+                                <div className="col-sm-6 ml-auto">
+                                    {this.state.visible ? <nav>
+                                        <ul>
+                                            <li><a>About</a></li>
+                                            <li><a>Movie Buddies</a></li>
+                                            <li><a>Movies</a></li>
+                                            <li><a>Profile</a></li>
+                                            <li><a>Contact Us</a></li>
+                                        </ul>
+                                    </nav> : null}
+                                </div>
+
+
+                                    { this.state.visible ? <FontAwesomeIcon onClick={this.toggle} className="fa-2x nav-toggle" icon={faTimes} /> : <FontAwesomeIcon onClick={this.toggle} className="fa-2x nav-toggle" icon={faBars}  /> }
+                            </div>
                         </div>
                     </div>
                 </section>
             </div>
 
             );
-    }
+}
 }
 
 export default App;
