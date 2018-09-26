@@ -4,7 +4,7 @@ import Movie from "./Movie"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 
-class Main extends React.Component {
+class Login extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -57,4 +57,4 @@ class Main extends React.Component {
 }
 }
 
-export default Main;
+export default Login;

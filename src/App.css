@@ -63,7 +63,7 @@ nav a {
     padding-left: 1rem;
     padding-right: 1rem;
 }
-nav a:hover {
+nav a:hover, Link:hover {
     padding-top: 1rem;
     padding-bottom: 1rem;
     border-top: white 1px solid;

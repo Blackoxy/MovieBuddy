@@ -5,14 +5,14 @@ class Callback extends Component {
     componentDidMount(){
         const auth = new Auth()
         auth.handleAuthentication()
-        
+
     }
     render(){
         return(
             <div>
                 Loading...
                 <br/>
-                <a href="/secret">Home</a>
+                <a href="/movies">Home</a>
             </div>
         )
     }

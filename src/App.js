@@ -54,7 +54,7 @@ class App extends Component {
             case "callback":
                 mainComponent = <Callback />;
                 break;
-            case "secret":
+            case "movies":
                 mainComponent = this.props.auth.isAuthenticated() ? <Main movieData={this.state.movieData} data={this.state.data} {...this.props} /> : <NotFound/>
                 // mainComponent = this.props.auth.isAuthenticated() ? <Secret data={this.state.data} {...this.props} /> : <NotFound/>
                 break;

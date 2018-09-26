@@ -1,11 +1,12 @@
 import React from 'react';
 import logo from "../assets/movie-buddy-logo.png"
 import Movie from "./Movie"
-import { Router, Route, Switch } from 'react-router-dom'
+import { Router, Route, Switch, Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import UserForm from "./UserForm"
 import MovieList from "./MovieList"
+import About from './About'
 
 class Main extends React.Component {
     constructor(props) {
@@ -30,7 +31,8 @@ class Main extends React.Component {
             if (unique === arr[j]) {
                 return (
                     <Switch>
-                        <Route path='/secret' render={(props)=> <MovieList { ...props } data={this.props.data}/> } />
+                        <Route path='/movies' render={(props)=> <MovieList { ...props } data={this.props.data}/> } />
+                        <Route path='/about' component={About} />
                     </Switch>
                     )
             }
@@ -66,9 +68,9 @@ class Main extends React.Component {
                         <div className="col-sm-6 ml-auto">
                             {this.state.visible ? <nav>
                                 <ul>
-                                    <li><a>About</a></li>
+                                    <Link to="/about" ><a>About</a></Link>
                                     <li><a>Movie Buddies</a></li>
-                                    <li><a>Movies</a></li>
+                                    <Link to="/movies"><a>Movies</a></Link>
                                     <li><a>Profile</a></li>
                                     <li><a>Contact Us</a></li>
                                     <li><a onClick={this.props.auth.logout} >Log Out</a></li>

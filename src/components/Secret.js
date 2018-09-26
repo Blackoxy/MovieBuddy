@@ -3,7 +3,7 @@ import logo from "../assets/movie-buddy-logo.png"
 import Movie from "./Movie"
 
 class Secret extends Component {
-    
+
     render(){
         const movies = this.props.data.map(movie => {
             return <Movie    poster_path={movie.poster_path}
