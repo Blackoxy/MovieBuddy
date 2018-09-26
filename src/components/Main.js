@@ -3,6 +3,8 @@ import logo from "../assets/movie-buddy-logo.png"
 import Movie from "./Movie"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import UserForm from "./UserForm"
+import MovieList from "./MovieList"
 
 class Main extends React.Component {
     constructor(props) {
@@ -11,28 +13,47 @@ class Main extends React.Component {
             visible: false,
         }
     }
-    toggle =() => {
+    toggle = () => {
         this.setState({
             visible : !this.state.visible
         })
     }
+    verify = (movies) => {
+        let unique = localStorage.getItem('User_id')
+        let arr = []
+        for (let i in movies) {
+            arr.push(movies[i].userId)
 
+        }
+        for (let j in arr) {
+            if (unique === arr[j]) {
+                return <MovieList data={this.props.data} />
 
-render(){
-    return (
-        <section className="container-fluid">
-            <div className="main-content">
+                }
+
+        }
+        for (let k in arr) {
+            if (unique !== arr[k]){
+                return <UserForm movieData={this.props.movieData} />
+
+                }
+
+        }
+
+    }
+
+    render(){
+        return (
+            <section className="container-fluid">
                 <div className="row">
                     <div className="col-sm-8 mx-auto">
                         <div>
                             <img className="buddyLogo" src={logo} alt="movie buddy logo"/>
 
-                            {!this.props.auth.isAuthenticated() && <button className="btn btn-info" onClick={this.props.auth.login}>Login</button>}
-
-                            <ul className="listings listing">
-                                {movies(this.props.data)}
-                            </ul>
-                            {/*<p>Login to start adding movies and matching with Movie Buddies</p>*/}
+                            <div className="main-content">
+                                {/*!this.props.auth.isAuthenticated() && <button className="btn btn-info" onClick={this.props.auth.login}>Login</button>*/}
+                                {this.verify(this.props.movieData)}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -46,6 +67,7 @@ render(){
                                     <li><a>Movies</a></li>
                                     <li><a>Profile</a></li>
                                     <li><a>Contact Us</a></li>
+                                    <li><a onClick={this.props.auth.logout} >Log Out</a></li>
                                 </ul>
                             </nav> : null}
                         </div>
@@ -54,19 +76,18 @@ render(){
                         { this.state.visible ? <FontAwesomeIcon onClick={this.toggle} className="fa-2x nav-toggle" icon={faTimes} /> : <FontAwesomeIcon onClick={this.toggle} className="fa-2x nav-toggle" icon={faBars}  /> }
                     </div>
                 </div>
-            </div>
-        </section>
-        )
+            </section>
+            )
 
-    }
 }
-const movies = (data) => data.map(movie => {
-        console.log('test')
-        return <Movie    poster_path={movie.poster_path}
-            title={movie.title}
-            overview={movie.overview}
-            popularity={movie.popularity}
-        />
-        })
+}
+const movieList = (data) => data.map(movie => {
+    console.log('test')
+    return <Movie    poster_path={movie.poster_path}
+        title={movie.title}
+        overview={movie.overview}
+        popularity={movie.popularity}
+    />
+    })
 
 export default Main;

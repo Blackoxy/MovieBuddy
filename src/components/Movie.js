@@ -1,4 +1,5 @@
 import React from 'react'
+import AddMovie from './AddMovie'
 
 const Movie = (props) => {
     const poster = 'https://image.tmdb.org/t/p/original'
@@ -11,7 +12,8 @@ const Movie = (props) => {
                 <h4>{props.title}</h4>
                 {/* <p>{props.overview}</p> */}
             </div>
-            <button className="movieButton btn btn-info">Add to Wishlist</button>
+            {/* <button className="movieButton btn btn-info">Add to Wishlist</button> */}
+            <AddMovie title={props.title} />
         </li>
 
     )
