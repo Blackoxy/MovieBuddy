@@ -26,9 +26,6 @@ render(){
                     <div className="col-sm-8 mx-auto">
                         <div>
                             <img className="buddyLogo" src={logo} alt="movie buddy logo"/>
-                            <p className="text-danger">
-                                To see your wishlist and buddy matches <a href="/secret">Click Here</a>
-                            </p>
 
                             {!this.props.auth.isAuthenticated() && <button className="btn btn-info" onClick={this.props.auth.login}>Login</button>}
 
