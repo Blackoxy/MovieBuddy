@@ -17,5 +17,18 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "Teal: #056571 Eggplant: #874c62 Caramel: #c98474",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blackoxy/MovieBuddyFE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blackoxy/MovieBuddyFE/issues"
+  },
+  "homepage": "https://github.com/Blackoxy/MovieBuddyFE#readme"
 }
