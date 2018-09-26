@@ -50,7 +50,10 @@ class App extends Component {
 
         return (
             <div className="App">
-                                {mainComponent}
+                {mainComponent}
+                <main id="movie-container"> 
+                <Secret />
+                </main>  
             </div>
 
             );

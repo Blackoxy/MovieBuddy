@@ -42,6 +42,7 @@ class Auth {
                 localStorage.setItem("id_token", authResult.idToken)
                 localStorage.setItem("expires_at", expiresAt)
                 localStorage.setItem("User_id", authResult.idTokenPayload.sub)
+                localStorage.setItem("Pic", authResult.idTokenPayload.picture)
                 location.hash = ""
                 location.pathname = LOGIN_SUCCESS_PAGE
                 this.idToken = authResult.idToken;

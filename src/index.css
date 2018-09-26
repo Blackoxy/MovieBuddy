@@ -16,3 +16,40 @@ body {
     /* width: 100%; */
     /* padding-top: 3em; */
 }
+
+
+.movie-card {
+    position: relative;
+}
+
+.front {
+    position: absolute;
+    z-index: 2;
+    margin: auto;
+}
+
+.back {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    margin: auto;
+}
+
+.clicked {
+    transform: rotateY(180deg);
+    transition: 500ms;
+}
+
+.flipped {
+    z-index: 2;
+    transform: rotateY(180deg);
+    box-shadow: 0 0 .8vw rgb(162, 252, 255),
+    0 0 1.5vw rgb(115, 222, 226),
+    0 0 3.1vw  rgb(53, 160, 163),
+    0 0 5.5vw  rgb(30, 126, 129),
+    0 0 11.7vw rgb(19, 94, 97),
+    0 0 19.4vw rgb(17, 89, 92);
+}
