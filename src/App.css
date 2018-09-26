@@ -32,7 +32,8 @@
 }
 
 .listing .contain { 
-    height: 370px;
+    height: 375px;
+    /* height: 370px; */
     background-color: rgb(241, 239, 239);
     display: flex;
     flex-direction: column;
@@ -86,3 +87,10 @@ nav a {
     flex-direction: column;
     /* justify-content: space-between; */
 }
+
+.positionForm {
+    display: flex;
+    flex-direction: row;
+}
+
+
