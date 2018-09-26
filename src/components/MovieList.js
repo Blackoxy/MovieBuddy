@@ -11,11 +11,11 @@ class MovieList extends React.Component {
     render (){
         return (
 
-            <React.Fragment>
+            <section className="move-list">
 
                 <h3> Add Movies to your Watch List below: </h3>
                 <ul className="listing listings"> {movies(this.props.data)} </ul>
-            </React.Fragment>
+            </section>
             )
     }
 }

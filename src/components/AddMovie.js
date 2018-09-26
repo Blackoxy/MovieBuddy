@@ -51,7 +51,7 @@ class AddMovie extends React.Component {
 
                         </label>
                     </div>
-                <button className="btn btn-success" type="submit">Confirm Add</button>
+                <button className="addButton" type="submit">Add to Watchlist</button>
                 </section>
             </form>
 

@@ -54,7 +54,7 @@ class Main extends React.Component {
                 <div className="row">
                     <div className="col-sm-8 mx-auto">
                         <div>
-                            <img className="buddyLogo" src={logo} alt="movie buddy logo"/>
+                            <img className="buddyLogo header" src={logo} alt="movie buddy logo"/>
 
                             <div className="main-content">
                                 {/*!this.props.auth.isAuthenticated() && <button className="btn btn-info" onClick={this.props.auth.login}>Login</button>*/}
@@ -68,9 +68,9 @@ class Main extends React.Component {
                         <div className="col-sm-6 ml-auto">
                             {this.state.visible ? <nav>
                                 <ul>
-                                    <Link to="/about" ><a>About</a></Link>
+                                    <Link to="/about" >About</Link>
                                     <li><a>Movie Buddies</a></li>
-                                    <Link to="/movies"><a>Movies</a></Link>
+                                    <Link to="/movies">Movies</Link>
                                     <li><a>Profile</a></li>
                                     <li><a>Contact Us</a></li>
                                     <li><a onClick={this.props.auth.logout} >Log Out</a></li>

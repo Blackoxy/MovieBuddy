@@ -59,13 +59,21 @@ button a:hover {
     text-decoration: none;
     font-size: 105%;
 }
+Link {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 nav a {
     padding-left: 1rem;
     padding-right: 1rem;
-}
-nav a:hover, Link:hover {
     padding-top: 1rem;
     padding-bottom: 1rem;
+}
+nav a:hover, Link:hover {
+    text-decoration: none;
+    color: white;
     border-top: white 1px solid;
     border-bottom: white 1px solid;  
 }
@@ -75,6 +83,12 @@ nav a:hover, Link:hover {
     max-width: 900px;
     height: auto;
     margin-bottom: 5em;
+}
+.addButton {
+    margin-top: 1em;
+    background:#056571;
+    color: white;
+    border-radius: 5px;
 }
 .loginButton{
     font-size: 14pt;
@@ -90,13 +104,24 @@ nav a:hover, Link:hover {
     padding: 0;
 }
 html {
+    height: 100vh;
     padding: 0;
     margin: 0;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 section {
     margin: 0;
     padding: 0;
-    min-height: 100vh;
+    /* min-height: 100vh; */
+}
+.header {
+    position: fixed;
+    margin:auto;
+    top: 0;
+    left: 0;
+    right: 0;
 }
 .main-nav {
     display: flex;
@@ -122,6 +147,10 @@ nav ul {
     justify-content: space-between;
     padding: 0;
     margin: 0;
+    align-items: center;
+}
+:active {
+    color: white;
 }
 .nav-toggle {
     margin-left: 3em;
@@ -133,8 +162,8 @@ nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
-    padding-bottom: 150px;
+    /* height: 100vh; */
+    /* padding-bottom: 150px; */
 }
 .form {
     /* background: teal; */
