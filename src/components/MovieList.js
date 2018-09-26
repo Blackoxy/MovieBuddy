@@ -13,10 +13,10 @@ class MovieList extends React.Component {
 
             <React.Fragment>
 
-            <h3> Add Movies to your Watch List below: </h3>
-            <ul className="listing listings"> {movies(this.props.data)} </ul>
-        </React.Fragment>
-        )
+                <h3> Add Movies to your Watch List below: </h3>
+                <ul className="listing listings"> {movies(this.props.data)} </ul>
+            </React.Fragment>
+            )
     }
 }
 const movies = (data) => data.map(movie => {
