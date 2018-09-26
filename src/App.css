@@ -51,6 +51,23 @@
     margin-top: 10px;
 }
 /* jose additions below */
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+    text-decoration: none;
+    font-size: 105%;
+}
+
+.loginButton{
+    font-size: 14pt;
+    background:#056571;
+    color: white;
+    min-height: 50px;
+    padding: 1em;
+    border-radius: 5px;
+}
 
 .container-fluid {
     padding: 0;
