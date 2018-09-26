@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import logo from "./assets/movie-buddy-logo.png"
 import Main from './components/Main.js';
+import Login from './components/Login.js';
 import Secret from './components/Secret.js';
 import NotFound from './components/NotFound.js';
 import Callback from './components/Callback.js'
@@ -11,6 +13,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            visible: false,
             data: [],
         }
     }
@@ -31,13 +34,14 @@ class App extends Component {
         let mainComponent = "";
         switch(this.props.location){
             case "":
-                mainComponent = <Main data={this.state.data} {...this.props}/>;
+                mainComponent = <Login data={this.state.data} {...this.props}/>;
                 break;
             case "callback":
                 mainComponent = <Callback />;
                 break;
             case "secret":
-                mainComponent = this.props.auth.isAuthenticated() ? <Secret data={this.state.data} {...this.props} /> : <NotFound/>
+                mainComponent = this.props.auth.isAuthenticated() ? <Main data={this.state.data} {...this.props} /> : <NotFound/>
+                // mainComponent = this.props.auth.isAuthenticated() ? <Secret data={this.state.data} {...this.props} /> : <NotFound/>
                 break;
             default:
                 mainComponent = <NotFound />;
@@ -46,28 +50,11 @@ class App extends Component {
 
         return (
             <div className="App">
-                <section className="container-fluid">
-                    <div className="main-content">
-                        <div className="row">
-                            <div className="col-sm-8 mx-auto">
                                 {mainComponent}
-                            </div>
-                        </div>
-                        <div className="row m-0">
-                            <nav>
-                                <a>About</a>
-                                <a>Movie Buddies</a>
-                                <a>Movies</a>
-                                <a>Profile</a>
-                                <a>Contact Us</a>
-                            </nav>
-                        </div>
-                    </div>
-                </section>
             </div>
 
             );
-    }
+}
 }
 
 export default App;
