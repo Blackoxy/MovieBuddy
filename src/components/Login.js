@@ -25,10 +25,10 @@ class Login extends React.Component {
                     <div className="row">
                         <div className="col-sm-10 mx-auto">
                             <div>
-                                <div className="header">
+                                <div>
                                     <img className="heroLogo" src={logo} alt="movie buddy logo"/>
                                 </div>
-                                {!this.props.auth.isAuthenticated() ? <button className="loginButton" onClick={this.props.auth.login}>Login / Signup</button> : <button className="loginButton" ><a href="/secret">Enter</a></button>}
+                                {!this.props.auth.isAuthenticated() ? <button className="loginButton" onClick={this.props.auth.login}>Login / Signup</button> : <button className="loginButton" ><a href="/movies">Enter</a></button>}
 
 
                             </div>
