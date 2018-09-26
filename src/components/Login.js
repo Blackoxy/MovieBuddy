@@ -23,17 +23,17 @@ class Main extends React.Component {
             <section className="container-fluid">
                 <div className="main-content">
                     <div className="row">
-                        <div className="col-sm-8 mx-auto">
+                        <div className="col-sm-10 mx-auto">
                             <div>
                                 <div className="header">
-                                    <img className="buddyLogo" src={logo} alt="movie buddy logo"/>
+                                    <img className="heroLogo" src={logo} alt="movie buddy logo"/>
                                 </div>
-                                <button className="loginButton"><a href="/secret">Login/Signup</a></button>
-                                {!this.props.auth.isAuthenticated() && <button className="btn btn-info" onClick={this.props.auth.login}>Login</button>}
+                                {!this.props.auth.isAuthenticated() ? <button className="loginButton" onClick={this.props.auth.login}>Login / Signup</button> : <button className="loginButton"><a href="/secret">Enter</a></button>}
+
 
                             </div>
                         </div>
-                    </div>
+                        </div>
                     <div className="row d-flex justify-content-space-between m-0">
                         <div className="main-nav">
                             <div className="col-sm-6 ml-auto">
@@ -41,6 +41,7 @@ class Main extends React.Component {
                                     <ul>
                                         <li><a>About</a></li>
                                         <li><a>Contact Us</a></li>
+                                        <li><a onClick={this.props.auth.logout}>Log out</a></li>
                                     </ul>
                                 </nav> : null}
                             </div>
