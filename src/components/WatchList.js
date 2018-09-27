@@ -1,5 +1,6 @@
 import React from 'react'
 import WatchItem from './WatchItem'
+import MovieBuddyMatches from './MovieBuddyMatches'
 
 const WatchList = (props) => {
     let go = (match) => {
@@ -13,16 +14,16 @@ const WatchList = (props) => {
         return arr
     }
     let movieArr = go(props.movieData)
-    console.log("array ", movieArr)
 
     const movieMap = movieArr.map(movie => {
         return <WatchItem title={movie.title} id={movie.id} deleteOne={props.deleteOne}/>
     })
 
     return (
-        <div className="form">
-            <h1>Watch List</h1>
-            <div>
+        <div className="form row">
+            {/* <h1>Watch List</h1> */}
+                <MovieBuddyMatches movieData={props.movieData} />
+            <div className="col">
                 {movieMap}
             </div>
         </div>

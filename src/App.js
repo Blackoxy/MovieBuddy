@@ -88,11 +88,11 @@ class App extends Component {
 
         return (
             <div className="App">
-                                {mainComponent}
+                {mainComponent}
             </div>
 
             );
-}
+  }
 }
 
 export default App;

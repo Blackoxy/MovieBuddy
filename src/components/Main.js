@@ -7,6 +7,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import UserForm from "./UserForm"
 import MovieList from "./MovieList"
 import WatchList from './WatchList';
+import MovieBuddyMatches from './MovieBuddyMatches';
 
 class Main extends React.Component {
     constructor(props) {
@@ -58,6 +59,7 @@ class Main extends React.Component {
                             <div className="main-content">
                                 {/*!this.props.auth.isAuthenticated() && <button className="btn btn-info" onClick={this.props.auth.login}>Login</button>*/}
                                 {this.verify(this.props.movieData)}
+                                
                 {this.state.visible ? <WatchList deleteOne={this.props.deleteOne} movieData={this.props.movieData} /> : null}
                             </div>
                         </div>
