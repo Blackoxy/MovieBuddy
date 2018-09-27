@@ -219,3 +219,10 @@ label {
 .bg-caramel {
 	background: #c98474
 }
+
+.flexIt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
