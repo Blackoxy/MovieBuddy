@@ -29,6 +29,7 @@ class AddMovie extends React.Component {
         fetch(apiUrl, options)
             .then(res => res.json())
             .then(() => {
+                this.props.loadMovie()
 
             })
 

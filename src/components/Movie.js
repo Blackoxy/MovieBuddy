@@ -13,7 +13,7 @@ const Movie = (props) => {
                 <h4>{props.title}</h4>
                 {/* <p>{props.overview}</p> */}
             </div>
-            <AddMovie title={props.title} />
+            <AddMovie loadMovie={props.loadMovie} movieData={props.movieData} title={props.title} />
         </li>
 
     )

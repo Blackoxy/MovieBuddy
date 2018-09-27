@@ -19,13 +19,14 @@ class MovieList extends React.Component {
                 loadMovie={this.props.loadMovie}
             />
             })
+
         return (
 
-            <section className="movie-list bg-caramel">
+            <React.Fragment>
 
-                <h2> Now Playing in Theaters:</h2>
-                <ul className="listing listings bg-caramel"> {movies(this.props.data)} </ul>
-            </section>
+                <h3> Add Movies to your Watch List below: </h3>
+                <ul className="listing listings"> {movies(this.props.data)} </ul>
+            </React.Fragment>
             )
     }
 }
