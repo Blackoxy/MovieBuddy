@@ -64,7 +64,7 @@ class Main extends React.Component {
                     </div>
                 </div>
                 <div className="row d-flex justify-content-space-between m-0">
-                    <div className="main-nav">
+                    <div className="main-nav bg-eggplant">
                         <div className="col-sm-6 ml-auto">
                             {this.state.visible ? <nav>
                                 <ul>
