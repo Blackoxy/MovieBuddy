@@ -7,12 +7,12 @@ class AddMovie extends React.Component {
         super(props)
         this.state = {
             title: this.props.title,
-            user_id: localStorage.getItem('User_id')
-
+            user_id: localStorage.getItem('User_id'),
         }
 
     }
 
+    
     postData = (e) => {
         e.preventDefault()
         const body = JSON.stringify(this.state)
@@ -21,16 +21,14 @@ class AddMovie extends React.Component {
             body: body,
             headers: new Headers({
                 'content-type': 'application/json'
-
             })
-
         }
 
         fetch(apiUrl, options)
             .then(res => res.json())
             .then(() => {
-
-            })
+                this.props.loadMovie()
+        })
 
     }
 
@@ -38,7 +36,6 @@ class AddMovie extends React.Component {
 
         return (
             <form className="positionForm" onSubmit={this.postData} >
-                <section className="form">
                     <div className="hidden">
                         <label>Title:
                             <input type="text" name="title" value={this.state.title} />
@@ -52,7 +49,6 @@ class AddMovie extends React.Component {
                         </label>
                     </div>
                 <button className="btn btn-success" type="submit">Confirm Add</button>
-                </section>
             </form>
 
             )

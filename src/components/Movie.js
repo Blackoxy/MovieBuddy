@@ -13,7 +13,7 @@ const Movie = (props) => {
                 {/* <p>{props.overview}</p> */}
             </div>
             {/* <button className="movieButton btn btn-info">Add to Wishlist</button> */}
-            <AddMovie title={props.title} />
+            <AddMovie loadMovie={props.loadMovie} movieData={props.movieData} title={props.title} />
         </li>
 
     )

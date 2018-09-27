@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import UserForm from "./UserForm"
 import MovieList from "./MovieList"
+import WatchList from './WatchList';
 
 class Main extends React.Component {
     constructor(props) {
@@ -30,7 +31,7 @@ class Main extends React.Component {
             if (unique === arr[j]) {
                 return (
                     <Switch>
-                        <Route path='/secret' render={(props)=> <MovieList { ...props } data={this.props.data}/> } />
+                        <Route path='/secret' render={(props)=> <MovieList { ...props } loadMovie={this.props.loadMovie} data={this.props.data}/> } />
                     </Switch>
                     )
             }
@@ -57,6 +58,7 @@ class Main extends React.Component {
                             <div className="main-content">
                                 {/*!this.props.auth.isAuthenticated() && <button className="btn btn-info" onClick={this.props.auth.login}>Login</button>*/}
                                 {this.verify(this.props.movieData)}
+                {this.state.visible ? <WatchList deleteOne={this.props.deleteOne} movieData={this.props.movieData} /> : null}
                             </div>
                         </div>
                     </div>

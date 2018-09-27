@@ -9,6 +9,7 @@ import Callback from './components/Callback.js'
 
 const apiUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=a1e4aa1da92fe4650fdbf74e93240a8a&language=en-US&page=1&region=US'
 const movieLink = 'http://localhost:4000'
+const deleteLink = 'http://localhost:4000/movie/'
 
 class App extends Component {
     constructor(props) {
@@ -30,19 +31,41 @@ class App extends Component {
             })
     }
 
+    loadMovie = () => {
+      fetch(movieLink)
+      .then(response => response.json())
+      .then(dat => {
+          this.setState({
+              movieData: dat.result,
+          })
+      })
+    }
+
     componentDidMount = () => this.loadData()
 
-    componentWillMount = () => {
-              fetch(movieLink)
-                .then(response => response.json())
-            .then(dat => {
-                this.setState({
-                                    movieData: dat.result,
+    componentWillMount = () => this.loadMovie()
 
-                })
-
-            })
-
+    deleteOne = (id) => {
+      const options = {
+        method: 'DELETE',
+        headers: new Headers({
+            'content-type': 'application/json'
+        })
+      }
+  
+      fetch(deleteLink + id, options)
+          .then(res => {
+              return res.json()
+          })
+          .then(() => {
+              const oldData = this.state.movieData
+              const newData = oldData.filter(pose => {
+                return !(id === pose.id)
+              })
+              this.setState({
+                movieData: newData
+              })
+          })
     }
 
     render() {
@@ -55,7 +78,7 @@ class App extends Component {
                 mainComponent = <Callback />;
                 break;
             case "secret":
-                mainComponent = this.props.auth.isAuthenticated() ? <Main movieData={this.state.movieData} data={this.state.data} {...this.props} /> : <NotFound/>
+                mainComponent = this.props.auth.isAuthenticated() ? <Main deleteOne={this.deleteOne} loadMovie={this.loadMovie} movieData={this.state.movieData} data={this.state.data} {...this.props} /> : <NotFound/>
                 // mainComponent = this.props.auth.isAuthenticated() ? <Secret data={this.state.data} {...this.props} /> : <NotFound/>
                 break;
             default:

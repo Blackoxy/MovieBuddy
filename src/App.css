@@ -134,10 +134,10 @@ nav ul {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    padding-bottom: 150px;
+    padding-bottom: 128px;
 }
 .form {
-    /* background: teal; */
+    background: teal;
 }
 label {
     color: 

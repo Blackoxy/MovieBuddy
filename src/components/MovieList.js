@@ -9,6 +9,17 @@ class MovieList extends React.Component {
         }
     }
     render (){
+        const movies = (data) => data.map(movie => {
+            console.log('test')
+            return <Movie    poster_path={movie.poster_path}
+                title={movie.title}
+                overview={movie.overview}
+                popularity={movie.popularity}
+                movieData={movie.movieData}
+                loadMovie={this.props.loadMovie}
+            />
+            })
+        
         return (
 
             <React.Fragment>
@@ -19,13 +30,5 @@ class MovieList extends React.Component {
             )
     }
 }
-const movies = (data) => data.map(movie => {
-    console.log('test')
-    return <Movie    poster_path={movie.poster_path}
-        title={movie.title}
-        overview={movie.overview}
-        popularity={movie.popularity}
-    />
-    })
 
 export default MovieList;
