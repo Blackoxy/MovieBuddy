@@ -19,7 +19,7 @@ const WatchList = (props) => {
         })
 
     return (
-        <div className="form bg-caramel mx-auto py-3">
+        <div className="form watch-list bg-caramel mx-auto py-3">
             <h1>Watch List</h1>
             <div>
                 {movieMap}
