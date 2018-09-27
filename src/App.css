@@ -16,7 +16,6 @@
 }
 
 .listings {
-	
 	display: flex;
 	overflow-x: auto;
 	align-items: center;
@@ -94,6 +93,9 @@ nav a:hover, Link:hover {
 	height: auto;
 	margin-bottom: 5em;
 }
+.removeButton a {
+    /* color: white; */
+}
 .addButton {
 	height: 25px;
 	margin-top: 1em;
@@ -129,8 +131,8 @@ section {
 	position: fixed;
 	margin:auto;
 	top: 0;
-	left: 0;
 	right: 0;
+	left: 0;
 }
 .main-nav {
 	display: flex;
@@ -144,6 +146,21 @@ section {
 	color: white;
 	margin: 0;
 	padding:0;
+}
+.listItem {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.listItem a {
+    font-size: 10pt;
+}
+.nav-expand {
+    color: white;
+    position: fixed;
+    margin-bottom: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 nav a {
 	font-size: 10pt;
@@ -162,9 +179,9 @@ a:active {
 }
 .nav-toggle {
 	margin-left: 3em;
-	/* float:right; */
+	float:right;
 	/* margin-right: 3em; */
-	margin-right:auto;
+	/* margin-right:auto; */
 }
 .main-content {
 	display: flex;

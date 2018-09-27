@@ -36,18 +36,17 @@ class Login extends React.Component {
                         </div>
                     <div className="row d-flex justify-content-space-between m-0">
                         <div className="main-nav bg-eggplant">
-                            <div className="col-sm-6 ml-auto">
-                                {this.state.visible ? <nav>
+                            <div className="col-sm-6 mx-auto">
+                                <nav>
                                     <ul>
                                         <li><a>About</a></li>
                                         <li><a>Contact Us</a></li>
                                         <li><a onClick={this.props.auth.logout}>Log out</a></li>
                                     </ul>
-                                </nav> : null}
+                                </nav>
                             </div>
 
 
-                            { this.state.visible ? <FontAwesomeIcon onClick={this.toggle} className="fa-2x nav-toggle" icon={faTimes} /> : <FontAwesomeIcon onClick={this.toggle} className="fa-2x nav-toggle" icon={faBars}  /> }
                         </div>
                     </div>
                 </div>
