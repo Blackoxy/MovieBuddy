@@ -8,6 +8,7 @@ import UserForm from "./UserForm"
 import MovieList from "./MovieList"
 import WatchList from './WatchList'
 import About from './About'
+import Callback from './Callback'
 
 class Main extends React.Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class Main extends React.Component {
                     <Switch>
                         <Route path='/movies' render={(props)=> <MovieList { ...props } loadMovie={this.props.loadMovie} data={this.props.data}/> } />
                         <Route path='/about' component={About} />
+                        <Route path='/callback' render={(props)=> <Callback {...props} /> } />
                     </Switch>
                     )
 }
