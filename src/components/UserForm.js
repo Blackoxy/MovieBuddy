@@ -55,7 +55,7 @@ class UserForm extends React.Component {
     render() {
 
         return (
-            <div className="form">
+            <div className="new-user-form bg-eggplant">
                 <form className="positionForm" onSubmit={this.postData} >
                     <div>
                         <label>First Name:
@@ -72,7 +72,7 @@ class UserForm extends React.Component {
                             <input type="text" name="userId" value={this.state.userId}/>
                         </label>
                     </div>
-                    <button className="loginButton" type="submit">Create Profile</button>
+                    <button className="newUserBtn bg-teal" type="submit">Create Profile</button>
                 </form>
             </div>
 

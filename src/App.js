@@ -92,7 +92,7 @@ class App extends Component {
         return (
             <div className="App">
                 {mainComponent}
-                <Route exact path='/callback' component={Callback}/>
+
             </div>
 
             );

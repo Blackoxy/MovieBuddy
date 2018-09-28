@@ -11,8 +11,8 @@ class Auth {
         this.auth0 = new auth0.WebAuth({
                     domain: "anhuelita.auth0.com",
                     clientID: "chOvEHXSCIdBc04owcc8H61yGB0xE3bb",
-                    redirectUri: "https://moviebuddy.surge.sh/callback",
-                    // redirectUri: "http://localhost:3000/callback",
+                    // redirectUri: "https://moviebuddy.surge.sh/callback",
+                    redirectUri: "http://localhost:3000/callback",
                     // redirectUri: window.location.href,
                     audience: "https://anhuelita.auth0.com/userinfo",
                     responseType: "token id_token",
