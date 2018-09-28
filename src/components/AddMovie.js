@@ -1,6 +1,7 @@
 import React from 'react'
 
-const apiUrl = 'http://localhost:4000/movie'
+// const apiUrl = 'http://localhost:4000/movie'
+const apiUrl = 'https://moviebuddy-server.herokuapp.com/movie'
 
 class AddMovie extends React.Component {
     constructor(props) {

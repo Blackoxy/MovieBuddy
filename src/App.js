@@ -6,10 +6,13 @@ import Login from './components/Login.js';
 import Secret from './components/Secret.js';
 import NotFound from './components/NotFound.js';
 import Callback from './components/Callback.js'
+import { Route } from 'react-router-dom'
 
 const apiUrl = 'https://api.themoviedb.org/3/movie/now_playing?api_key=a1e4aa1da92fe4650fdbf74e93240a8a&language=en-US&page=1&region=US'
-const movieLink = 'http://localhost:4000'
-const deleteLink = 'http://localhost:4000/movie/'
+const movieLink = 'https://moviebuddy-server.herokuapp.com/'
+// const movieLink = 'http://localhost:4000'
+const deleteLink = 'https://moviebuddy-server.herokuapp.com/movie/'
+// const deleteLink = 'http://localhost:4000/movie/'
 
 class App extends Component {
     constructor(props) {
@@ -89,6 +92,7 @@ class App extends Component {
         return (
             <div className="App">
                 {mainComponent}
+                <Route exact path='/callback' component={Callback}/>
             </div>
 
             );

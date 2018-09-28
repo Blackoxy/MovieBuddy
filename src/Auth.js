@@ -4,12 +4,16 @@ import auth0 from "auth0-js";
 const LOGIN_SUCCESS_PAGE = "/movies"
 const LOGIN_FAILURE_PAGE = "/"
 
+
+
 class Auth {
     constructor(){
         this.auth0 = new auth0.WebAuth({
                     domain: "anhuelita.auth0.com",
                     clientID: "chOvEHXSCIdBc04owcc8H61yGB0xE3bb",
-                    redirectUri: "http://localhost:3000/callback",
+                    redirectUri: "https://moviebuddy.surge.sh/callback",
+                    // redirectUri: "http://localhost:3000/callback",
+                    // redirectUri: window.location.href,
                     audience: "https://anhuelita.auth0.com/userinfo",
                     responseType: "token id_token",
                     scope: "openid"

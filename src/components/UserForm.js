@@ -1,6 +1,7 @@
 import React from 'react'
 
-const apiUrl = 'http://localhost:4000/user'
+// const apiUrl = 'http://localhost:4000/user'
+const apiUrl = 'https://moviebuddy-server.herokuapp.com/user'
 
 class UserForm extends React.Component {
     constructor(props) {
