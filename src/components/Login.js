@@ -1,18 +1,24 @@
-import React from "react";
+import React, { Component } from "react";
 import logo from "../assets/movie-buddy-logo.png";
-import Movie from "./Movie";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Panel } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
 
 const quoteUrl = "http://localhost:4000/quote";
 
-class Main extends React.Component {
+class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      visible: false
+      visible: false,
+      quoteData: "hello",
+      quote: "",
+      movie: "",
+      reveal: false
     };
   }
+
   toggle = () => {
     this.setState({
       visible: !this.state.visible
@@ -20,22 +26,42 @@ class Main extends React.Component {
   };
 
   getRandom = (min, max) => {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    let num = Math.floor(Math.random() * (max - min)) + min;
+    return num;
   };
 
   componentDidMount = () => {
     fetch(quoteUrl)
       .then(response => response.json())
       .then(data => {
-        var num = this.getRandom(0, data.result.length);
-        var quote = data.result[num].quote;
-        console.log(quote);
+        this.setState({
+          quoteData: data.result
+        });
+      })
+      .then(() => {
+        let num = this.getRandom(0, this.state.quoteData.length);
+        console.log(this.state.quoteData.length);
+        let quote = this.getQuote(num);
+        let movie = this.getMovie(num);
+        this.setState({
+          quote: quote,
+          movie: movie
+        });
       });
   };
 
-  render() {
-    //let RandomNumber = this.getRandom(0, data.results.length);
+  getQuote = num => this.state.quoteData[num].quote;
 
+  getMovie = num => this.state.quoteData[num].movie;
+
+  showMovie = () => {
+    this.setState({
+      reveal: true
+    });
+  };
+
+  render() {
+    if (!this.state.reveal) setTimeout(this.showMovie, 4000);
     return (
       <section className="container-fluid">
         <div className="main-content">
@@ -60,9 +86,28 @@ class Main extends React.Component {
                     Login
                   </button>
                 )}
-                <div>
-                  <h2>`Quote:`</h2>
-                  <h2>`Movie:`</h2>
+                <div className="m-3">
+                  <Jumbotron>
+                    <h1>Welcome to Movie Buddies!</h1>
+                    <p>
+                      Never go to the movies alone again! We match you with your
+                      movie soulmate!
+                    </p>
+                  </Jumbotron>
+                  ;
+                  <Panel>
+                    <Panel.Heading>
+                      <Panel.Title componentClass="h3">
+                        Guess the Movie!
+                      </Panel.Title>
+                    </Panel.Heading>
+                    <Panel.Body>
+                      <h2>"{this.state.quote}"</h2>
+                      <h2 className={this.state.reveal ? "" : "invisible"}>
+                        <em> {this.state.movie}</em>
+                      </h2>
+                    </Panel.Body>
+                  </Panel>
                 </div>
               </div>
             </div>
