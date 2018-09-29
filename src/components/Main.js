@@ -33,7 +33,7 @@ class Main extends React.Component {
             if (unique === arr[j]) {
                 return (
                     <Switch>
-                        <Route path='/movies' render={(props)=> <MovieList { ...props } loadMovie={this.props.loadMovie} data={this.props.data}/> } />
+                        <Route path='/movies' render={(props)=> <MovieList { ...props } toggleModal={this.props.toggleModal} loadMovie={this.props.loadMovie} data={this.props.data}/> } />
                         <Route path='/about' component={About} />
                         <Route path='/callback' render={(props)=> <Callback {...props} /> } />
                     </Switch>

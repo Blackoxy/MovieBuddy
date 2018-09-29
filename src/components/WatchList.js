@@ -22,13 +22,13 @@ const WatchList = (props) => {
     return (
 
         <div className="buddies-movies mx-auto bg-caramel py-3">
-                <div>
-            <h4>Watch List</h4>
             <div>
-                {movieMap}
+                <h4>Watch List</h4>
+                <div>
+                    {movieMap}
+                </div>
             </div>
-        </div>
-                <MovieBuddyMatch movieData={props.movieData}/>
+            <MovieBuddyMatch movieData={props.movieData}/>
 
         </div>
 

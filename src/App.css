@@ -247,7 +247,18 @@ a:active {
 .bg-caramel {
 	background: #c98474
 }
-
+.modal-content {
+    border-radius: 10px;
+}
+.modal-title {
+    color: white;
+    font-size: 18pt;
+}
+.modal-body {
+    text-align: center;
+    color: white;
+    font-size: 12pt;
+}
 .flexIt {
     display: flex;
     flex-direction: row;

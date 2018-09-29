@@ -10,8 +10,7 @@ class MovieList extends React.Component {
     }
     render (){
         const movies = (data) => data.map(movie => {
-            console.log('test')
-            return <Movie    poster_path={movie.poster_path}
+            return <Movie toggleModal={this.props.toggleModal}   poster_path={movie.poster_path}
                 title={movie.title}
                 overview={movie.overview}
                 popularity={movie.popularity}
