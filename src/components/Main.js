@@ -33,7 +33,7 @@ class Main extends React.Component {
             if (unique === arr[j]) {
                 return (
                     <Switch>
-                        <Route path='/movies' render={(props)=> <MovieList { ...props } loadMovie={this.props.loadMovie} data={this.props.data}/> } />
+                        <Route path='/movies' render={(props)=> <MovieList { ...props } toggleModal={this.props.toggleModal} loadMovie={this.props.loadMovie} data={this.props.data}/> } />
                         <Route path='/about' component={About} />
                         <Route path='/callback' render={(props)=> <Callback {...props} /> } />
                     </Switch>
@@ -67,9 +67,9 @@ render(){
                 </div>
             </div>
             <div className="row d-flex justify-content-space-between m-0">
-                <div className="nav-expand col-sm-6 mx-auto">
-                    {this.state.visible ? <WatchList deleteOne={this.props.deleteOne} movieData={this.props.movieData} /> : null}
-                </div>
+
+                    {this.state.visible ? <div className="nav-expand bg-eggplant col-sm-6 mx-auto"><WatchList deleteOne={this.props.deleteOne} movieData={this.props.movieData} /> </div>: null}
+
                 <div className="main-nav bg-eggplant">
                     <div className="col-sm-8 mx-auto">
                         <nav>
